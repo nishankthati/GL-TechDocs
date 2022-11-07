@@ -207,3 +207,77 @@ catch (err) {
     console.log(err)
 }
 })
+
+//Share doc-View
+$('#view').click( function viewOnly() {
+  try{
+    $.ajax({
+      headers: {'authToken': getUserToken()},
+      data: {
+        DocId: doc_id,
+        DocName: $('#name').val()
+      },
+      type: 'POST',
+      url: getApiUrl('set_permissions'),
+      success: function(data){
+      },
+      error: function (data) {
+        // in case of error we need to read response from data.responseJSON
+        showAlert('#filelist-error-message', 'alert-danger', "", getResponseMessage(data));
+      }
+    });
+}
+catch (err) {
+  console.log(err)
+}
+})
+
+//Share doc-edit
+$('#edit').click( function canEdit() {
+  try{
+    $.ajax({
+      headers: {'authToken': getUserToken()},
+      data: {
+        DocId: doc_id,
+        DocName: $('#name').val()
+      },
+      type: 'POST',
+      url: getApiUrl('set_permissions'),
+      success: function(data){
+
+      },
+      error: function (data) {
+        // in case of error we need to read response from data.responseJSON
+        showAlert('#filelist-error-message', 'alert-danger', "", getResponseMessage(data));
+      }
+    });
+}
+catch (err) {
+  console.log(err)
+}
+})
+
+//Share doc-remove
+$('#remove').click( function remove() {
+  try{
+    $.ajax({
+      headers: {'authToken': getUserToken()},
+      data: {
+        DocId: doc_id,
+        DocName: $('#name').val()
+      },
+      type: 'POST',
+      url: getApiUrl('set_permissions'),
+      success: function(data){
+
+      },
+      error: function (data) {
+        // in case of error we need to read response from data.responseJSON
+        showAlert('#filelist-error-message', 'alert-danger', "", getResponseMessage(data));
+      }
+    });
+}
+catch (err) {
+  console.log(err)
+}
+})
